@@ -5193,5 +5193,22 @@ document.addEventListener('keydown', function(e){
 <footer style="text-align:center;padding:18px;font-size:11px;color:#4a3a6a;border-top:1px solid #1a0a2e;margin-top:12px;user-select:none;">
   &copy; 2026 EZ vSeeBox Channel Guide. All rights reserved.
 </footer>
+<script>
+// Auto-calculate total channel count on load
+document.addEventListener('DOMContentLoaded', function(){
+  var total = 0;
+  ['hl','lu','lup'].forEach(function(id){
+    var rows = document.querySelectorAll('#b-' + id + ' .r');
+    rows.forEach(function(r){
+      var n = r.dataset.num || '';
+      if(!n || n === '0' || n.toLowerCase() === 'varies') return;
+      var m = n.match(/^(\d+)-(\d+)$/);
+      total += m ? (parseInt(m[2]) - parseInt(m[1]) + 1) : 1;
+    });
+  });
+  var el = document.getElementById('vsb-stats-ch');
+  if(el) el.textContent = total.toLocaleString() + ' channels';
+});
+</script>
 </body>
 </html>
