@@ -282,7 +282,6 @@ td{padding:6px 15px;font-size:13px;vertical-align:middle}
   /* tab bar touchable */
   .at{touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
   .atr{touch-action:pan-x pan-y;}
-  #vsb-stats{position:fixed;bottom:16px;right:12px;transform:none;width:auto;background:rgba(10,5,20,0.85);border:1px solid rgba(168,85,247,0.3);border-radius:10px;padding:6px 12px;backdrop-filter:blur(8px);}
 }
 
 
@@ -307,6 +306,9 @@ td{padding:6px 15px;font-size:13px;vertical-align:middle}
 }
 #vsb-stats-up{
   font-size:10px;color:var(--tx2);letter-spacing:.4px;
+}
+@media(max-width:640px){
+  #vsb-stats{position:fixed;bottom:16px;right:12px;transform:none;width:auto;background:rgba(10,5,20,0.85);border:1px solid rgba(168,85,247,0.3);border-radius:10px;padding:6px 12px;backdrop-filter:blur(8px);}
 }
 
 /* ── View-Only Mode ── */
